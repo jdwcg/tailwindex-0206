@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex</title>
+  </head>
+  <body>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+      }
+      .contain {
+        height: 100%;
+        border: 1px solid red;
+      }
+      .card {
+        border: 1px solid red;
+      }
+    </style>
+    <div class="contain">
+      <div class="card"><h1>Lorem ipsum dolor sit amet.</h1></div>
+    </div>
+    <script>
+      let contain = document.querySelector(".contain");
+      let card = document.querySelector(".card");
+      contain.addEventListener("click", () => {
+        card.style.display = "none";
+      });
+
+      card.addEventListener("click", (event) => {
+        event.stopPropagation();
+      });
+    </script>
+  </body>
+</html>
