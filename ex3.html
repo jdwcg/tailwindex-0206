@@ -1,193 +1,157 @@
 <!DOCTYPE html>
 <html lang="ko" class="h-full">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-    />
-    <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-          "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI",
-          "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji",
-          "Segoe UI Symbol", sans-serif;
-      }
-      @layer components {
-        .alink {
-          @apply text-gray-500;
-        }
-      }
-      .mLnb.on {
-        display: block;
-      }
-      .about_panel.on {
-        display: block;
-      }
-      .shop_panel.on {
-        display: block;
-      }
-      .expand_more1.on,
-      .expand_more2.on {
-        transform: rotate(180deg);
-      }
-    </style>
-  </head>
-  <body class="whole h-full flex flex-col flex-1">
-    <div class="flex flex-col flex-1 w-6xl items-center">
-      <div
-        class="menuBtn border-l border-slate-100 absolute bg-white xl:hidden right-0"
-      >
-        <div class="flex flex-col flex-1">
-          <span class="material-symbols-outlined p-6 flex justify-end">
-            menu
-          </span>
-          <ul
-            class="mLnb w-screen hidden bg-white shadow-lg shadow-gray-200/150 p-4 flex flex-col flex-1 space-y-4"
-          >
-            <li class="">
-              <a
-                class="flex items-center justify-between"
-                href="javascript:void(0)"
-              >
-                About
-                <span
-                  onclick="mToggle('about')"
-                  class="material-symbols-outlined expand_more1"
-                >
-                  expand_more
-                </span>
-              </a>
-              <ul class="hidden about_panel">
-                <li><a href="javascript:void(0)">me</a></li>
-                <li><a href="javascript:void(0)">resume</a></li>
-              </ul>
-            </li>
-            <li>
-              <a
-                class="flex items-center justify-between"
-                href="javascript:void(0)"
-              >
-                shop
-                <span
-                  onclick="mToggle('shop')"
-                  class="material-symbols-outlined expand_more2"
-                >
-                  expand_more
-                </span>
-              </a>
-              <ul class="hidden shop_panel">
-                <li><a href="javascript:void(0)">item</a></li>
-                <li><a href="javascript:void(0)">my</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <script>
-          function mToggle(elem) {
-            let expandMore1 = document.querySelector(".expand_more1");
-            let expandMore2 = document.querySelector(".expand_more2");
-            let aboutPanel = document.querySelector(".about_panel");
-            let shopPanel = document.querySelector(".shop_panel");
-            if (elem == "about") {
-              console.log(0);
-              expandMore1.classList.toggle("on");
-              aboutPanel.classList.toggle("on");
-            } else if (elem == "shop") {
-              console.log(1);
-              expandMore2.classList.toggle("on");
-              shopPanel.classList.toggle("on");
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+      <style>
+         body {
+            font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI",
+               "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+         }
+         @layer components {
+            .alink {
+               @apply text-gray-500;
             }
-          }
-          const mLnb = document.querySelector(".mLnb");
-          const menuBtn = document.querySelector(".menuBtn");
+         }
+         .mLnb.on {
+            display: block;
+         }
+         .about_panel.on {
+            display: block;
+         }
+         .shop_panel.on {
+            display: block;
+         }
+         .expand_more1.on,
+         .expand_more2.on {
+            transform: rotate(180deg);
+         }
+      </style>
+   </head>
+   <body class="whole h-full flex flex-col flex-1">
+      <div class="flex flex-col flex-1 w-6xl items-center">
+         <div class="menuBtn border-l border-slate-100 absolute bg-white xl:hidden right-0">
+            <div class="flex flex-col flex-1">
+               <span class="material-symbols-outlined p-6 flex justify-end"> menu </span>
+               <ul class="mLnb w-screen hidden bg-white shadow-lg shadow-gray-200/150 p-4 flex flex-col flex-1 space-y-4">
+                  <li class="">
+                     <a class="flex items-center justify-between" href="javascript:void(0)">
+                        About
+                        <span onclick="mToggle('about')" class="material-symbols-outlined expand_more1"> expand_more </span>
+                     </a>
+                     <ul class="hidden about_panel">
+                        <li><a href="javascript:void(0)">me</a></li>
+                        <li><a href="javascript:void(0)">resume</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a class="flex items-center justify-between" href="javascript:void(0)">
+                        shop
+                        <span onclick="mToggle('shop')" class="material-symbols-outlined expand_more2"> expand_more </span>
+                     </a>
+                     <ul class="hidden shop_panel">
+                        <li><a href="javascript:void(0)">item</a></li>
+                        <li><a href="javascript:void(0)">my</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+            <script>
+               function mToggle(elem) {
+                  let expandMore1 = document.querySelector(".expand_more1")
+                  let expandMore2 = document.querySelector(".expand_more2")
+                  let aboutPanel = document.querySelector(".about_panel")
+                  let shopPanel = document.querySelector(".shop_panel")
+                  if (elem == "about") {
+                     console.log(0)
+                     expandMore1.classList.toggle("on")
+                     aboutPanel.classList.toggle("on")
+                  } else if (elem == "shop") {
+                     console.log(1)
+                     expandMore2.classList.toggle("on")
+                     shopPanel.classList.toggle("on")
+                  }
+               }
+               const mLnb = document.querySelector(".mLnb")
+               const menuBtn = document.querySelector(".menuBtn")
 
-          const whole = document.querySelector(".whole");
-          whole.addEventListener("click", () => {
-            mLnb.classList.remove("on");
-            // mLnb.style.display = "none"
-          });
-          mLnb.addEventListener("click", function (event) {
-            event.stopPropagation();
-          });
-          menuBtn.addEventListener("click", function (event) {
-            event.stopPropagation();
+               const whole = document.querySelector(".whole")
+               whole.addEventListener("click", () => {
+                  mLnb.classList.remove("on")
+                  // mLnb.style.display = "none"
+               })
+               mLnb.addEventListener("click", function (event) {
+                  event.stopPropagation()
+               })
+               menuBtn.addEventListener("click", function (event) {
+                  event.stopPropagation()
 
-            mLnb.classList.toggle("on");
-          });
-        </script>
+                  mLnb.classList.toggle("on")
+               })
+            </script>
+         </div>
+         <header class="header flex lg:justify-between justify-start py-4 w-full xl:w-[1200px]">
+            <div class="logo py-2 pl-4">brand</div>
+            <ul class="gnbWrap hidden xl:flex">
+               <li class="gnb w-[120px] text-center py-2 px-4 transition ease-in">
+                  <a href="javascript:void(0)" class="hover:alink">About</a>
+                  <ul class="lnb hidden mt-4">
+                     <li class="mb-2"><a href="" class="hover:alink"> me</a></li>
+                     <li class="mb-2"><a href="" class="hover:alink"> resume</a></li>
+                  </ul>
+               </li>
+               <li class="gnb w-[120px] text-center py-2 px-4 transition ease-in">
+                  <a href="javascript:void(0)" class="hover:alink">shop</a>
+                  <ul class="lnb hidden mt-4">
+                     <li class="mb-2"><a href="" class="hover:alink"> item</a></li>
+                     <li class="mb-2">
+                        <a href="" class="hover:alink"> my favorite</a>
+                     </li>
+                     <li class="mb-2"><a href="" class="hover:alink"> goods</a></li>
+                  </ul>
+               </li>
+               <li class="gnb w-[120px] text-center py-2 px-4 transition ease-in">
+                  <a href="javascript:void(0)" class="hover:alink">login</a>
+                  <ul class="lnb hidden mt-4">
+                     <li class="mb-2"><a href="" class="hover:alink"> sign in</a></li>
+                     <li class="mb-2"><a href="" class="hover:alink"> sign out</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </header>
+         <main class="bg-slate-50 flex flex-1 w-full">
+            <section class="m-auto mt-0 w-[1200px]">Lorem ipsum dolor quos.</section>
+         </main>
+         <footer class="py-4">foot</footer>
       </div>
-      <header
-        class="header flex lg:justify-between justify-start py-4 w-full xl:w-[1200px]"
-      >
-        <div class="logo py-2 pl-4">brand</div>
-        <ul class="gnbWrap hidden xl:flex">
-          <li class="gnb w-[120px] text-center py-2 px-4 transition ease-in">
-            <a href="javascript:void(0)" class="hover:alink">About</a>
-            <ul class="lnb hidden mt-4">
-              <li class="mb-2"><a href="" class="hover:alink"> me</a></li>
-              <li class="mb-2"><a href="" class="hover:alink"> resume</a></li>
-            </ul>
-          </li>
-          <li class="gnb w-[120px] text-center py-2 px-4 transition ease-in">
-            <a href="javascript:void(0)" class="hover:alink">shop</a>
-            <ul class="lnb hidden mt-4">
-              <li class="mb-2"><a href="" class="hover:alink"> item</a></li>
-              <li class="mb-2">
-                <a href="" class="hover:alink"> my favorite</a>
-              </li>
-              <li class="mb-2"><a href="" class="hover:alink"> goods</a></li>
-            </ul>
-          </li>
-          <li class="gnb w-[120px] text-center py-2 px-4 transition ease-in">
-            <a href="javascript:void(0)" class="hover:alink">login</a>
-            <ul class="lnb hidden mt-4">
-              <li class="mb-2"><a href="" class="hover:alink"> sign in</a></li>
-              <li class="mb-2"><a href="" class="hover:alink"> sign out</a></li>
-            </ul>
-          </li>
-        </ul>
-      </header>
-      <main class="bg-slate-50 flex flex-1 w-full">
-        <section class="m-auto mt-0 w-[1200px]">
-          Lorem ipsum dolor quos.
-        </section>
-      </main>
-      <footer class="py-4">foot</footer>
-    </div>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              clifford: "#da373d",
+      <script>
+         tailwind.config = {
+            theme: {
+               extend: {
+                  colors: {
+                     clifford: "#da373d",
+                  },
+               },
             },
-          },
-        },
-      };
-    </script>
-    <script>
-      let gnbWrap = document.querySelector(".gnbWrap");
-      let lnb = document.querySelectorAll(".lnb");
-      gnbWrap.addEventListener("mouseenter", () => {
-        console.log(lnb);
-        for (let i = 0; i < lnb.length; i++) {
-          lnb[i].style.display = "block";
-        }
-      });
-      gnbWrap.addEventListener("mouseleave", () => {
-        for (let i = 0; i < lnb.length; i++) {
-          lnb[i].style.display = "none";
-        }
-      });
-    </script>
-  </body>
+         }
+      </script>
+      <script>
+         let gnbWrap = document.querySelector(".gnbWrap")
+         let lnb = document.querySelectorAll(".lnb")
+         gnbWrap.addEventListener("mouseenter", () => {
+            console.log(lnb)
+            for (let i = 0; i < lnb.length; i++) {
+               lnb[i].style.display = "block"
+            }
+         })
+         gnbWrap.addEventListener("mouseleave", () => {
+            for (let i = 0; i < lnb.length; i++) {
+               lnb[i].style.display = "none"
+            }
+         })
+      </script>
+   </body>
 </html>
